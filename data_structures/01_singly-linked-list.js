@@ -44,6 +44,27 @@ class singlyLinkedList {
 
         }
     }
+
+    shift() {
+        if(!this.length) return undefined
+        const orphan = this.head
+        this.head = orphan.next
+        this.length -= 1
+        if(this.length === 0) this.tail = null
+        return orphan
+    }
+
+    unshift(value) {
+        const newNode = new Node(value)
+        if(this.length === 0){
+            this.head = this.tail = newNode
+        } else {
+            newNode.next = this.head
+            this.head = newNode
+        }
+        this.length += 1
+        return newNode
+    }
 }
 
 

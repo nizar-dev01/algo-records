@@ -82,6 +82,23 @@ class singlyLinkedList {
         }
         return !!currentNode
     }
+
+    reverse(){
+        if(!this.length || this.length === 1) return false
+        let currentNode = this.head
+        let previousNode = null
+        while(currentNode){
+            const next = currentNode.next
+            currentNode.next = previousNode
+            
+            previousNode = currentNode
+            currentNode = next
+        }
+        const detachedHead = this.head
+        this.head = this.tail
+        this.tail = detachedHead
+        return true
+    }
 }
 
 

@@ -99,6 +99,16 @@ class singlyLinkedList {
         this.tail = detachedHead
         return true
     }
+
+    print() {
+        const temp_list = []
+        let current_node = this.head
+        while (current_node) {
+            temp_list.push(current_node.value)
+            current_node = current_node.next
+        }
+        console.log(temp_list)
+    }
 }
 
 

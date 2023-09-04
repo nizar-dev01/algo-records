@@ -100,13 +100,14 @@ class singlyLinkedList {
         return true
     }
 
-    print() {
+    print(message) {
         const temp_list = []
         let current_node = this.head
         while (current_node) {
             temp_list.push(current_node.value)
             current_node = current_node.next
         }
+        if(message) console.log("\n", message, "\n---------------------\n")
         console.log(temp_list)
     }
 }
@@ -115,8 +116,11 @@ class singlyLinkedList {
 const list = new singlyLinkedList();
 ["1", "2", "3", "4", "5"].forEach(el => list.push(el))
 
-console.log("\nBefore popping\n---------------------\n", list)
+list.print("Before popping")
 
 list.pop()
 
-console.log("\nAfter popping\n---------------------\n", list)
+list.print("After popping")
+
+list.reverse()
+list.print("After reversing")

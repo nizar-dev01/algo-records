@@ -12,4 +12,14 @@ class DoublyLinkedList {
         this.length = 0
     }
 
+    push(value){
+        const node = new Node(value)
+        if(this.length === 0){
+            this.head = this.tail = node
+        } else {
+            node.previous = this.tail
+        }
+        this.length += 1
+    }
+
 }

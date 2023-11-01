@@ -22,4 +22,18 @@ class DoublyLinkedList {
         this.length += 1
     }
 
+    pop(){
+        if(this.length === 0) {
+            return null
+        } else {
+            const rnode = this.tail
+            this.tail = rnode.previous
+            this.length -= 1
+            if(this.length === 0){
+                this.head = null
+            }
+            return rnode
+        }
+    }
+
 }

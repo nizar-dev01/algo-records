@@ -12,4 +12,30 @@ class BinarySearchTree {
     constructor() {
         this.root = null
     }
+
+    insert(value) {
+        const node = new Node(value)
+        if (this.root === null) {
+            this.root = node
+            return this
+        } else {
+            let current = this.root
+            while (true) {
+                const currentVal = current.value
+                if (value === currentVal) {
+                    return undefined
+                } else if (value > currentVal) {
+                    if (!current.right) {
+                        current.right = node
+                        break
+                    } else current = current.right
+                } else {
+                    if (!current.left) {
+                        current.left = node
+                        break
+                    } else current = current.left
+                }
+            }
+        }
+    }
 }

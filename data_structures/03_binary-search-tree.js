@@ -38,4 +38,14 @@ class BinarySearchTree {
             }
         }
     }
+
+    _fill_random(len = 100, min = 1) {
+        for (let i = 0; i < len; i++) {
+            this.insert(
+                Math.floor(
+                    min + Math.random() * (len - min) + 1
+                )
+            )
+        }
+    }
 }

@@ -52,6 +52,21 @@ class BinarySearchTree {
         }
     }
 
+    bfs() {
+        const data = []
+        const queue = new LinkedList()
+        queue.push(this.root)
+
+        let current;
+        while (queue.length) {
+            current = queue.shift().value
+            data.push(current.value)
+            if (current.left) queue.push(current.left)
+            if (current.right) queue.push(current.right)
+        }
+        return data
+    }
+    
     _fill_random(len = 100, min = 1) {
         for (let i = 0; i < len; i++) {
             this.insert(

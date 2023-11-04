@@ -66,7 +66,19 @@ class BinarySearchTree {
         }
         return data
     }
-    
+
+    dfs(mode = "pre") {
+        const data = []
+        const traverse = node => {
+            if (mode !== "post") data.push(node.value)
+            if (node.left) traverse(node.left)
+            if (node.right) traverse(node.right)
+            if (mode === "post") data.push(node.value)
+        }
+        traverse(this.root)
+        return data
+    }
+
     _fill_random(len = 100, min = 1) {
         for (let i = 0; i < len; i++) {
             this.insert(

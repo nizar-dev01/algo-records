@@ -39,6 +39,19 @@ class BinarySearchTree {
         }
     }
 
+    find(value) {
+        let current = this.root
+        while (true) {
+            const currentVal = current.value
+            if (value === currentVal) return current
+            else if (value > currentVal) {
+                if (current.right) current = current.right
+                else return null
+            } else if (current.left) current = current.left
+            else return null
+        }
+    }
+
     _fill_random(len = 100, min = 1) {
         for (let i = 0; i < len; i++) {
             this.insert(

@@ -89,3 +89,10 @@ class BinarySearchTree {
         }
     }
 }
+
+const tree = new BinarySearchTree()
+tree._fill_random(1000, 50)
+
+module.exports = {
+    Tree: BinarySearchTree
+}
